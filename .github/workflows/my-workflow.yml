@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: confluence-markdown-sync
+        uses: cupcakearmy/confluence-markdown-sync@v1
+        with:
+          from: "README.md"
+          to: "000000"
+          user: "xxxxxx@gmail.com"
+          cloud: "xxxxxx"
+          token: ${{ secrets.CONFLUENCE_TOKEN }}
